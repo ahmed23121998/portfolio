@@ -7,7 +7,7 @@ type ContactTextareaProps = {
   handleChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   handleBlur: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
   placeholder: string;
-  setMessageLines: React.Dispatch<React.SetStateAction<number>>;
+  // setMessageLines: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const ContactTextarea: React.FC<ContactTextareaProps> = ({
@@ -16,14 +16,14 @@ const ContactTextarea: React.FC<ContactTextareaProps> = ({
   handleChange,
   handleBlur,
   placeholder,
-  setMessageLines,
+  // setMessageLines,
 }) => {
   const handleInput = (e: React.FormEvent<HTMLTextAreaElement>) => {
     const target = e.target as HTMLTextAreaElement;
     target.style.height = "auto";
     target.style.height = target.scrollHeight + "px";
-    const lines = target.value.split("\n").length;
-    setMessageLines(lines);
+    // const lines = target.value.split("\n").length;
+    // setMessageLines(lines);
   };
 
   return (

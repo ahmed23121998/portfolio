@@ -11,14 +11,14 @@ interface Props {
   };
   handleChange: (e: React.ChangeEvent<any>) => void;
   handleBlur: (e: React.FocusEvent<any>) => void;
-  setMessageLines: React.Dispatch<React.SetStateAction<number>>;
+  // setMessageLines: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const ContactForm = ({
   values,
   handleChange,
   handleBlur,
-  setMessageLines,
+  // setMessageLines,
 }: Props) => {
   const isMobile = useBreakpointValue({ base: true, md: false });
 
@@ -54,7 +54,7 @@ const ContactForm = ({
         handleChange={handleChange}
         handleBlur={handleBlur}
         placeholder='"Your message here..."'
-        setMessageLines={setMessageLines}
+        // setMessageLines={setMessageLines}
       />
     </VStack>
   );

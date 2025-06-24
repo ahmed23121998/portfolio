@@ -24,8 +24,6 @@ const Contact = ({ setPage }: Props) => {
   }, []);
 
   const toast = useToast();
-  const [totalLines, setTotalLines] = useState(14);
-  const [messageLines, setMessageLines] = useState(1);
   const isMobile = useBreakpointValue({ base: true, md: false });
   const [loading, setLoading] = useState(false);
 
@@ -49,7 +47,6 @@ const Contact = ({ setPage }: Props) => {
           isClosable: true,
         });
       resetForm();
-      setMessageLines(1);
     } catch (error) {
       toast({
         title: "Error Sending Message",
@@ -63,13 +60,9 @@ const Contact = ({ setPage }: Props) => {
     }
   };
 
-  useEffect(() => {
-    setTotalLines(13 + messageLines);
-  }, [messageLines]);
-
   return (
     <Flex
-      width="100vw" // تعديل هنا
+      width="100vw"
       justify="center"
       align="center"
       direction={{ base: "column-reverse", lg: "row" }}
@@ -77,7 +70,7 @@ const Contact = ({ setPage }: Props) => {
       py={{ base: 8, md: 0 }}
       gap={{ base: 8, md: 16 }}
       marginBottom={6}
-      overflowY="auto" // إضافة هنا
+      overflowY="auto"
     >
       <Box
         w={{ base: "100%", md: "600px" }}
@@ -121,7 +114,7 @@ const Contact = ({ setPage }: Props) => {
                         values={values}
                         handleChange={handleChange}
                         handleBlur={handleBlur}
-                        setMessageLines={setMessageLines}
+                        // تم حذف setMessageLines
                       />
                     </VStack>
                   </HStack>
