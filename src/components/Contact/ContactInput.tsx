@@ -43,7 +43,7 @@ const ContactInput = ({
       </Box>
 
       <HStack spacing={2} height="19.5px">
-        <Text color="#569CD6">const</Text>
+        {/* <Text color="#569CD6">const</Text> */}
         <Text color="#9CDCFE">{name}</Text>
         <Text color="#569CD6">=</Text>
 

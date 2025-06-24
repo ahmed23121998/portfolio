@@ -29,7 +29,7 @@ const ContactTextarea: React.FC<ContactTextareaProps> = ({
   return (
     <Box>
       <HStack spacing={2}>
-        <Text color="#569CD6">const</Text>
+        {/* <Text color="#569CD6">const</Text> */}
         <Text color="#9CDCFE">{name}</Text>
         <Text color="#569CD6">=</Text>
       </HStack>

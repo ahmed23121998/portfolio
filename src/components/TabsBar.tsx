@@ -10,9 +10,9 @@ const TabsBar = ({ selectedTab, onSelectTab }: Props) => {
   const backgroundColor = useColorModeValue("gray-100", "gray.900");
   const tabs = [
     { Label: "Home", Link: "/" },
-    { Label: "About My", Link: "/about" },
+    { Label: "About Me", Link: "/about" },
     { Label: "Projects", Link: "/projects" },
-    { Label: "Contact My", Link: "/contact" },
+    { Label: "Contact Me", Link: "/contact" },
   ];
   return (
     <HStack
