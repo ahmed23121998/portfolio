@@ -77,6 +77,23 @@ export const projects = [
     Source: "https://github.com/ahmed23121998/Next.js-Project.git",
     Demo: "https://next-js-project-phi-dun.vercel.app/",
   },
+  {
+    ImageURL: "/assets/StackHubs.PNG",
+    Title: "StackHubs – InfoSec & Network Hub",
+    Description:
+      "A professional enterprise-grade web portal developed for StackHubs, highlighting the Network and InfoSec service hubs. Built with React and TypeScript, featuring multi-language support (EN/AR), RTL layout, smooth animations, and a responsive dark/light UI. Designed to reflect a modern corporate identity and seamless bilingual experience.",
+    Technologies: [
+      "React.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "i18next",
+      "React Router",
+      "Vite",
+    ],
+    Source: "https://github.com/ahmed23121998/StackHubs-website",
+    Demo: "https://stack-hubs-website.vercel.app/",
+  },
   // {
   //   ImageURL: "/assets/project-recipepage.webp",
   //   Title: "Angular E-commerce",
