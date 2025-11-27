@@ -4,7 +4,6 @@ import {
   Text,
   HStack,
   Link,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import ProjectTech from "./ProjectTech";
 
