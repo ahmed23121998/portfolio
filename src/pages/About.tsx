@@ -52,11 +52,9 @@ const About = ({ setPage }: Props) => {
       alignItems="left"
       justify="center"
       minHeight="100vh" // تعديل هنا
-      width="100vw" // تعديل هنا
       padding={{ base: "5", md: "10" }}
       spacing={8}
       animation={`${fadeIn} 0.5s ease-out`}
-      overflowY="auto" // إضافة هنا
       marginBottom={6}
     >
       <Box>

@@ -62,7 +62,6 @@ const Contact = ({ setPage }: Props) => {
 
   return (
     <Flex
-      width="100vw"
       minHeight="100vh"
       justify="center"
       align="center"
@@ -71,13 +70,11 @@ const Contact = ({ setPage }: Props) => {
       py={{ base: 8, md: 12 }}
       gap={{ base: 8, md: 16 }}
       marginBottom={6}
-      overflowY="auto"
     >
       <Box
         w={{ base: "100%", md: "600px" }}
         borderRadius="lg"
         fontFamily="monospace"
-        overflowX="hidden"
         p={8}
         bg="rgba(30, 30, 30, 0.6)"
         border="1px solid"

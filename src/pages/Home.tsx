@@ -4,8 +4,6 @@ import {
   VStack,
   Flex,
   Box,
-  // keyframes,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { useEffect } from "react";
@@ -58,7 +56,6 @@ const Home = ({ setPage }: Props) => {
   return (
     <Flex
       minHeight="100vh" // تعديل هنا
-      width="100vw" // تعديل هنا
       justify="center"
       align="center"
       direction={{ base: "column-reverse", lg: "row" }}
@@ -66,7 +63,6 @@ const Home = ({ setPage }: Props) => {
       py={{ base: 8, md: 0 }}
       gap={{ base: 8, md: 16 }}
       marginBottom={6}
-      overflowY="auto" // إضافة هنا
     >
       <VStack
         alignItems={{ base: "center", lg: "flex-start" }}

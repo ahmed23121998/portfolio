@@ -18,7 +18,11 @@ const Projects = ({ setPage }: Props) => {
   }, []);
 
   return (
-    <Box minHeight="100vh" width="100vw" overflowY="auto" p={4} marginBottom={6}>
+    <Box
+      minHeight="100vh"
+      p={4}
+      marginBottom={6}
+    >
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3 }}
         spacing={6}

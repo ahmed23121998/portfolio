@@ -21,7 +21,8 @@ const TabsBarItem = ({ Label, selectedTab, onSelectTab, Link }: Props) => {
   return (
     <HStack
       height="40px"
-      px={6}
+      px={{ base: 6, md: 10, lg: 20 }} // RWD padding
+      mx={{ base: 0, md: 4, lg: 12 }} // RWD margin
       justifyContent="center"
       bg={isSelected ? "#1e1e1e" : "transparent"}
       borderTop="2px solid"
