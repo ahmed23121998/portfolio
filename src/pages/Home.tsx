@@ -4,8 +4,6 @@ import {
   VStack,
   Flex,
   Box,
-  // keyframes,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { useEffect } from "react";
@@ -26,29 +24,26 @@ const Home = ({ setPage }: Props) => {
     setPage("home.js");
   }, []);
 
-  const accentColor = useColorModeValue("syntax.keyword", "#0BCEAF");
-  const textColor = useColorModeValue("nightOwl.text", "whiteAlpha.900");
-  const headingColor = useColorModeValue("nightOwl.text", "whiteAlpha.900");
-  const cardBg = useColorModeValue(
-    "rgba(1, 22, 39, 0.7)",
-    "rgba(31, 36, 40, 0.7)"
-  );
-  const cardBorderColor = useColorModeValue(
-    "rgba(126, 87, 194, 0.2)",
-    "rgba(11, 206, 175, 0.2)"
-  );
+  const accentColor = "#0BCEAF";
+  const textColor = "whiteAlpha.900";
+  const headingColor = "whiteAlpha.900";
 
   const renderSection = (items: typeof homeData.contactInfo) => (
     <Box
       p={6}
-      borderRadius="xl"
-      bg={cardBg}
+      borderRadius="lg"
+      bg="rgba(30, 30, 30, 0.6)"
       border="1px solid"
-      borderColor={cardBorderColor}
-      boxShadow="xl"
+      borderColor="rgba(11, 206, 175, 0.3)"
+      boxShadow="0 4px 20px rgba(11, 206, 175, 0.1)"
       width="100%"
-      transition="all 0.3s"
-      backdropFilter="blur(10px)"
+      transition="all 0.3s ease"
+      backdropFilter="blur(12px)"
+      _hover={{
+        transform: "translateY(-2px)",
+        boxShadow: "0 6px 25px rgba(11, 206, 175, 0.2)",
+        borderColor: "rgba(11, 206, 175, 0.5)",
+      }}
     >
       <VStack spacing={4} align="stretch">
         {items.map((item, index) => (
@@ -107,19 +102,23 @@ const Home = ({ setPage }: Props) => {
           position="absolute"
           inset="0"
           borderRadius="50%"
-          bgGradient={`radial(${accentColor}, transparent 70%)`}
-          opacity={useColorModeValue("0.1", "0.15")}
-          filter="blur(15px)"
+          bg="radial-gradient(circle, rgba(11, 206, 175, 0.3) 0%, transparent 70%)"
+          filter="blur(30px)"
+          animation="pulse 3s ease-in-out infinite"
         />
         <Image
           src={homeData.myImage}
           width={{ base: "250px", sm: "300px", md: "400px", lg: "425px" }}
           height="auto"
           borderRadius="50%"
-          border="4px solid"
-          borderColor={accentColor}
-          transition="transform 0.3s"
-          _hover={{ transform: "scale(1.02)" }}
+          border="3px solid"
+          borderColor="#0BCEAF"
+          boxShadow="0 0 30px rgba(11, 206, 175, 0.4)"
+          transition="all 0.4s ease"
+          _hover={{
+            transform: "scale(1.05)",
+            boxShadow: "0 0 40px rgba(11, 206, 175, 0.6)",
+          }}
         />
       </Box>
     </Flex>

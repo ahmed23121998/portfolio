@@ -84,9 +84,18 @@ const About = ({ setPage }: Props) => {
       <Button
         marginTop={6}
         width="200px"
+        height="50px"
         background="#0BCEAF"
         onClick={downloadCV}
-        _hover={{ background: "#09a88d" }}
+        borderRadius="lg"
+        fontSize="md"
+        fontWeight="bold"
+        boxShadow="0 4px 15px rgba(11, 206, 175, 0.3)"
+        _hover={{
+          background: "#09a88d",
+          transform: "translateY(-2px)",
+          boxShadow: "0 6px 20px rgba(11, 206, 175, 0.4)",
+        }}
         _active={{ transform: "scale(0.96)", background: "#079f84" }}
         transition="all 0.2s ease"
         isLoading={loading}
@@ -114,18 +123,22 @@ const About = ({ setPage }: Props) => {
           }}
           gap={8}
         >
-          {Object.entries(technicalSkills).map(([category, skills]) => (
+          {Object.entries(technicalSkills).map(([category, skills], idx) => (
             <GridItem
               key={category}
-              bg="whiteAlpha.50"
-              borderRadius="xl"
+              bg="rgba(30, 30, 30, 0.6)"
+              borderRadius="lg"
               p={6}
-              boxShadow="sm"
+              border="1px solid"
+              borderColor="rgba(11, 206, 175, 0.2)"
+              boxShadow="0 4px 15px rgba(0, 0, 0, 0.3)"
               _hover={{
-                transform: "translateY(-2px)",
-                boxShadow: "md",
+                transform: "translateY(-4px)",
+                boxShadow: "0 6px 25px rgba(11, 206, 175, 0.3)",
+                borderColor: "rgba(11, 206, 175, 0.5)",
               }}
-              transition="all 0.3s"
+              transition="all 0.3s ease"
+              animation={`${fadeIn} 0.6s ease-out ${idx * 0.1}s backwards`}
             >
               <Text fontWeight="bold" fontSize="lg" color="#0BCEAF" mb={4}>
                 {category}
@@ -134,7 +147,7 @@ const About = ({ setPage }: Props) => {
                 {skills.map((skill) => (
                   <HStack key={skill} spacing={3} width="100%">
                     <Box w="2" h="2" borderRadius="full" bg="#0BCEAF" />
-                    <Text fontSize="md">{skill}</Text>
+                    <Text fontSize="md" color="whiteAlpha.900">{skill}</Text>
                   </HStack>
                 ))}
               </VStack>

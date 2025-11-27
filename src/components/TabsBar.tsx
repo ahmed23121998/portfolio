@@ -7,7 +7,7 @@ interface Props {
 }
 
 const TabsBar = ({ selectedTab, onSelectTab }: Props) => {
-  const backgroundColor = useColorModeValue("gray-100", "gray.900");
+  const backgroundColor = useColorModeValue("#1e1e1e", "#1e1e1e");
   const tabs = [
     { Label: "Home", Link: "/" },
     { Label: "About Me", Link: "/about" },
@@ -18,9 +18,14 @@ const TabsBar = ({ selectedTab, onSelectTab }: Props) => {
     <HStack
       bg={backgroundColor}
       width="100%"
-      py={4}
+      py={0}
       spacing={0}
-      justify="space-between" 
+      justify="flex-start"
+      borderBottom="1px solid"
+      borderColor="#2d2d2d"
+      position="sticky"
+      top={0}
+      zIndex={100}
     >
       {tabs.map((tab) => (
         <TabsBarItem
