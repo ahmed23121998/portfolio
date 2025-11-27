@@ -18,23 +18,28 @@ const Projects = ({ setPage }: Props) => {
   }, []);
 
   return (
-    <Box minHeight="100vh" width="100vw" overflowY="auto" p={4} marginBottom={6}>
-      <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3 }}
-        spacing={6}
-        minWidth="100%"
-        animation={`${fadeIn} 0.5s ease-out`}
-      >
+    <Box
+      minHeight="100vh"
+      width="100vw"
+      overflowY="auto"
+      p={{ base: 4, md: 8 }}
+      marginBottom={6}
+    >
+      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={8} minWidth="100%">
         {projects.map((project, index) => (
-          <Project
+          <Box
             key={index}
-            ImageURL={project.ImageURL}
-            Title={project.Title}
-            Description={project.Description}
-            Technologies={project.Technologies}
-            Source={project.Source}
-            Demo={project.Demo}
-          />
+            animation={`${fadeIn} 0.6s ease-out ${index * 0.1}s backwards`}
+          >
+            <Project
+              ImageURL={project.ImageURL}
+              Title={project.Title}
+              Description={project.Description}
+              Technologies={project.Technologies}
+              Source={project.Source}
+              Demo={project.Demo}
+            />
+          </Box>
         ))}
       </SimpleGrid>
     </Box>

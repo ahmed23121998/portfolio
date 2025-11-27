@@ -7,9 +7,51 @@ body,
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   min-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  background: #23292f;
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a1f26 100%);
+  background-attachment: fixed;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0bceaf;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #09a88d;
 }

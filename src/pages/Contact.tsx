@@ -63,22 +63,27 @@ const Contact = ({ setPage }: Props) => {
   return (
     <Flex
       width="100vw"
+      minHeight="100vh"
       justify="center"
       align="center"
       direction={{ base: "column-reverse", lg: "row" }}
       px={{ base: 4, md: 8 }}
-      py={{ base: 8, md: 0 }}
+      py={{ base: 8, md: 12 }}
       gap={{ base: 8, md: 16 }}
       marginBottom={6}
       overflowY="auto"
     >
       <Box
         w={{ base: "100%", md: "600px" }}
-        borderRadius="md"
+        borderRadius="lg"
         fontFamily="monospace"
         overflowX="hidden"
-        pr="1rem"
-        bg="transparent"
+        p={8}
+        bg="rgba(30, 30, 30, 0.6)"
+        border="1px solid"
+        borderColor="rgba(11, 206, 175, 0.3)"
+        boxShadow="0 4px 20px rgba(11, 206, 175, 0.15)"
+        backdropFilter="blur(12px)"
         fontSize="2xl"
       >
         <Formik
@@ -122,16 +127,23 @@ const Contact = ({ setPage }: Props) => {
                   <Button
                     type="submit"
                     bg="#0BCEAF"
-                    color="white"
-                    _hover={{ bg: "#09a88d" }}
-                    mt={4}
-                    ml={4}
+                    color="#000"
+                    borderRadius="lg"
+                    boxShadow="0 4px 15px rgba(11, 206, 175, 0.4)"
+                    _hover={{
+                      bg: "#09a88d",
+                      transform: "translateY(-2px)",
+                      boxShadow: "0 6px 20px rgba(11, 206, 175, 0.5)",
+                    }}
+                    _active={{ transform: "scale(0.96)" }}
+                    mt={6}
                     isLoading={loading}
                     loadingText="Sending..."
-                    fontSize="2xl"
-                    height="60px"
-                    px={10}
+                    fontSize="lg"
+                    height="50px"
+                    px={12}
                     fontWeight="bold"
+                    transition="all 0.2s ease"
                   >
                     Send Message
                   </Button>
