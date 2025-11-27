@@ -1,4 +1,12 @@
-import { Image, Text, VStack, Flex, Box } from "@chakra-ui/react";
+import {
+  Image,
+  Text,
+  VStack,
+  Flex,
+  Box,
+  // keyframes,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { useEffect } from "react";
 import HomeItem from "../components/HomeItem";

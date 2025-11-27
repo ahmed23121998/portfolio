@@ -147,9 +147,7 @@ const About = ({ setPage }: Props) => {
                 {skills.map((skill) => (
                   <HStack key={skill} spacing={3} width="100%">
                     <Box w="2" h="2" borderRadius="full" bg="#0BCEAF" />
-                    <Text fontSize="md" color="whiteAlpha.900">
-                      {skill}
-                    </Text>
+                    <Text fontSize="md">{skill}</Text>
                   </HStack>
                 ))}
               </VStack>

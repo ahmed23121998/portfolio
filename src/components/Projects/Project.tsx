@@ -1,4 +1,11 @@
-import { VStack, Image, Text, HStack, Link } from "@chakra-ui/react";
+import {
+  VStack,
+  Image,
+  Text,
+  HStack,
+  Link,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import ProjectTech from "./ProjectTech";
 
 interface Props {

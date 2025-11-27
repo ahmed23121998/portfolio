@@ -18,14 +18,13 @@ const Projects = ({ setPage }: Props) => {
   }, []);
 
   return (
-    <Box
-      minHeight="100vh"
-      width="100vw"
-      overflowY="auto"
-      p={{ base: 4, md: 8 }}
-      marginBottom={6}
-    >
-      <SimpleGrid columns={{ sm: 1, md: 2, lg: 3 }} spacing={8} minWidth="100%">
+    <Box minHeight="100vh" width="100vw" overflowY="auto" p={4} marginBottom={6}>
+      <SimpleGrid
+        columns={{ sm: 1, md: 2, lg: 3 }}
+        spacing={6}
+        minWidth="100%"
+        animation={`${fadeIn} 0.5s ease-out`}
+      >
         {projects.map((project, index) => (
           <Box
             key={index}
