@@ -1,10 +1,4 @@
-import {
-  Image,
-  Text,
-  VStack,
-  Flex,
-  Box,
-} from "@chakra-ui/react";
+import { Image, Text, VStack, Flex, Box } from "@chakra-ui/react";
 import { keyframes } from "@emotion/react";
 import { useEffect } from "react";
 import HomeItem from "../components/HomeItem";
@@ -55,7 +49,7 @@ const Home = ({ setPage }: Props) => {
 
   return (
     <Flex
-      minHeight="100vh" // تعديل هنا
+      minHeight="100vh"
       justify="center"
       align="center"
       direction={{ base: "column-reverse", lg: "row" }}
