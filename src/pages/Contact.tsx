@@ -2,9 +2,7 @@ import {
   Box,
   Button,
   useToast,
-  HStack,
   VStack,
-  useBreakpointValue,
   Flex,
 } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
@@ -24,7 +22,6 @@ const Contact = ({ setPage }: Props) => {
   }, []);
 
   const toast = useToast();
-  const isMobile = useBreakpointValue({ base: true, md: false });
   const [loading, setLoading] = useState(false);
 
   const initialValues: FormValues = {
@@ -65,23 +62,27 @@ const Contact = ({ setPage }: Props) => {
       minHeight="100vh"
       justify="center"
       align="center"
-      direction={{ base: "column-reverse", lg: "row" }}
-      px={{ base: 4, md: 8 }}
-      py={{ base: 8, md: 12 }}
-      gap={{ base: 8, md: 16 }}
-      marginBottom={6}
+      direction={{ base: "column", lg: "row" }}
+      px={{ base: 3, sm: 4, md: 6, lg: 8 }}
+      py={{ base: 6, sm: 8, md: 10, lg: 12 }}
+      gap={{ base: 6, sm: 8, md: 10, lg: 16 }}
+      marginBottom={{ base: 4, md: 6 }}
     >
       <Box
-        w={{ base: "100%", md: "600px" }}
-        borderRadius="lg"
+        w={{ base: "100%", sm: "90%", md: "90%", lg: "50%" }}
+        maxW="100%"
+        borderRadius={{ base: "md", md: "lg" }}
         fontFamily="monospace"
-        p={8}
+        p={{ base: 4, sm: 5, md: 8 }}
         bg="rgba(30, 30, 30, 0.6)"
         border="1px solid"
         borderColor="rgba(11, 206, 175, 0.3)"
-        boxShadow="0 4px 20px rgba(11, 206, 175, 0.15)"
+        boxShadow={{
+          base: "0 2px 10px rgba(11, 206, 175, 0.1)",
+          md: "0 4px 20px rgba(11, 206, 175, 0.15)",
+        }}
         backdropFilter="blur(12px)"
-        fontSize="2xl"
+        fontSize={{ base: "sm", sm: "base", md: "lg", lg: "2xl" }}
       >
         <Formik
           initialValues={initialValues}
@@ -99,48 +100,49 @@ const Contact = ({ setPage }: Props) => {
 
             return (
               <Form>
-                <VStack align="center" w="full" justify="center">
-                  <HStack
-                    align="flex-start"
-                    spacing={2}
-                    w="full"
-                    justify="center"
-                  >
-                    <VStack
-                      align="stretch"
-                      w="full"
-                      minW={isMobile ? "300px" : "auto"}
-                    >
-                      <ContactDetails />
-                      <ContactForm
-                        values={values}
-                        handleChange={handleChange}
-                        handleBlur={handleBlur}
-                        // تم حذف setMessageLines
-                      />
-                    </VStack>
-                  </HStack>
+                <VStack
+                  align="center"
+                  w="full"
+                  justify="center"
+                  spacing={{ base: 3, md: 4 }}
+                >
+                  <VStack align="stretch" w="full">
+                    <ContactDetails />
+                    <ContactForm
+                      values={values}
+                      handleChange={handleChange}
+                      handleBlur={handleBlur}
+                    />
+                  </VStack>
 
                   <Button
                     type="submit"
                     bg="#0BCEAF"
                     color="#000"
-                    borderRadius="lg"
-                    boxShadow="0 4px 15px rgba(11, 206, 175, 0.4)"
+                    borderRadius={{ base: "md", md: "lg" }}
+                    boxShadow={{
+                      base: "0 2px 10px rgba(11, 206, 175, 0.3)",
+                      md: "0 4px 15px rgba(11, 206, 175, 0.4)",
+                    }}
                     _hover={{
                       bg: "#09a88d",
                       transform: "translateY(-2px)",
-                      boxShadow: "0 6px 20px rgba(11, 206, 175, 0.5)",
+                      boxShadow: {
+                        base: "0 3px 12px rgba(11, 206, 175, 0.4)",
+                        md: "0 6px 20px rgba(11, 206, 175, 0.5)",
+                      },
                     }}
-                    _active={{ transform: "scale(0.96)" }}
-                    mt={6}
+                    _active={{ transform: "scale(0.98)" }}
+                    mt={{ base: 4, md: 6 }}
+                    mb={{ base: 2, md: 0 }}
                     isLoading={loading}
                     loadingText="Sending..."
-                    fontSize="lg"
-                    height="50px"
-                    px={12}
+                    fontSize={{ base: "sm", md: "lg" }}
+                    height={{ base: "40px", md: "50px" }}
+                    px={{ base: 6, md: 12 }}
                     fontWeight="bold"
                     transition="all 0.2s ease"
+                    width={{ base: "100%", sm: "auto" }}
                   >
                     Send Message
                   </Button>

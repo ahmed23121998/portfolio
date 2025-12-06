@@ -20,9 +20,18 @@ function App() {
     >
       <Box width="100vw" height="100vh" overflow="hidden">
         <Box>
-        <TabsBar selectedTab={selectedPage} onSelectTab={setSelectedPage}/>
+          <TabsBar selectedTab={selectedPage} onSelectTab={setSelectedPage} />
         </Box>
-        <Box overflowY="auto" height="calc(100% - 40px)" width="100vw">
+        <Box
+          overflowY="auto"
+          height="calc(100% - 40px)"
+          width="100vw"
+          sx={{
+            "&::-webkit-scrollbar": { display: "none", width: 0 },
+            "-ms-overflow-style": "none",
+            "scrollbar-width": "none",
+          }}
+        >
           <Routes>
             <Route path="/" element={<Home setPage={setSelectedPage} />} />
             <Route

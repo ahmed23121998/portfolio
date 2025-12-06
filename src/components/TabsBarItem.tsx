@@ -20,30 +20,30 @@ const TabsBarItem = ({ Label, selectedTab, onSelectTab, Link }: Props) => {
 
   return (
     <HStack
+      width={{ base: "25%", sm: "25%", md: "25%", lg: "25%" }} 
       height="40px"
-      px={{ base: 6, md: 10, lg: 20 }} // RWD padding
-      mx={{ base: 0, md: 4, lg: 12 }} // RWD margin
+      px="2%"
+      mx="1%"
       justifyContent="center"
-      bg={isSelected ? "#1e1e1e" : "transparent"}
+      bg={isSelected ? "gray.800" : "transparent"}
       borderTop="2px solid"
-      borderTopColor={isSelected ? "#0BCEAF" : "transparent"}
+      borderTopColor={isSelected ? "teal.300" : "transparent"}
       cursor="pointer"
       userSelect="none"
       onClick={handleClick}
-      transition="all 0.2s ease"
+      transition="all 0.25s ease"
       _hover={{
-        bg: "#2d2d2d",
-        borderTopColor: isSelected ? "#0BCEAF" : "#666",
+        bg: isSelected ? "gray.800" : "gray.700",
+        borderTopColor: isSelected ? "teal.300" : "gray.500",
       }}
-      position="relative"
     >
       <Text
         fontSize="13px"
-        color={isSelected ? "#fff" : "#999"}
-        fontWeight={isSelected ? "500" : "400"}
+        color={isSelected ? "#0BCEAF" : "#999"}
+        fontWeight={isSelected ? "600" : "400"}
         whiteSpace="nowrap"
-        transition="color 0.2s ease"
-        _hover={{ color: "#fff" }}
+        transition="all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+        letterSpacing={isSelected ? "0.5px" : "0.2px"}
       >
         {Label}
       </Text>
